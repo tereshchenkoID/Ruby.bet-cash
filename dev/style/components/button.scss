@@ -1,0 +1,85 @@
+.button{
+	@include font;
+	@include input;
+	border: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&.coefficient{
+		padding: 5px 10px;
+		background-color: #343341;
+		justify-content: space-between;
+		*{
+			color: #fff;
+		}
+		.star{
+			margin-right: 5px;
+			&:hover{
+				&:before{
+					color: #fff;
+				}
+			}
+		}
+		&:hover{
+			&:not(.active){
+				background-color: lighten(#343341, 10%);
+				*{
+					&:not(.star){
+						color: #fff
+					}
+				}
+			}
+		}
+		&-active{
+			background-color: rgba(255,255,255,0.7);
+			*{
+				&:not(.star){
+					color: #000;
+				}
+			}
+		}
+	}
+	&.square{
+		padding: 0;
+		min-height: $base-height;
+		min-width: $base-height;
+		max-height: $base-height;
+		max-width: $base-height;
+	}
+	&.primary{
+		background-color: $primary;
+		color: #fff;
+		&:hover,
+		&.active{
+			background-color: darken($primary, 10%)
+		}
+	}
+	&.reload{
+		padding: 0;
+		min-width: 19px;
+		max-width: 20px;
+		background-color: $primary;
+		color: #fff;
+		font-size: 20px;
+		&:hover,
+		&.active{
+			background-color: darken($primary, 10%)
+		}
+	}
+	&.disabled{
+		position: relative;
+		pointer-events: none;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: rgba(40, 20, 32, 0.5);
+		}
+		.lock{
+			margin-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+.header{
+	.nav{
+		background-color: #fff;
+		height: 70px;
+		& > *{
+			height: 100%
+		}
+		.content.center{
+			height: 100%;
+		}
+	}
+}

@@ -1,0 +1,66 @@
+.star{
+	cursor: pointer;
+	&:before{
+		content: '\f005';
+		font-family: FontAwesome;
+		font-size: 16px;
+		color: darken(#fff, 50%);
+		z-index: 2;
+	}
+	&:hover,
+	&.active{
+		&:before{
+			color: #fff;
+		}
+	}
+}
+
+/* .up{
+	&:before{
+		color: #03c503;
+		content: "\f063";
+		transform: rotate(-135deg) translate(20%, -10%);
+	}
+}
+.down{
+	&:before{
+		color: #ed1c24;
+		content: "\f063";
+		transform: rotate(-45deg) translate(0, -15%);
+	}
+}
+.up,
+.down{
+	white-space: nowrap;
+	&:before{
+		display: inline-block;
+		font-family: FontAwesome;
+		font-size: 0.8em;
+		margin-left: 5px;
+		margin-right: 3px;
+	}
+}
+.blick{
+	&:before{
+		animation: blick .7s linear 5;
+	}
+} */
+
+
+.sport-icon{
+	padding: 0;
+	width: 23px!important;
+	height: 13px!important;
+	background-color: transparent;
+	border: none;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	z-index: 9;
+	&.play{
+		background-image: url(../img/icon-sport/MLVideoBW.svg);
+		&:hover{
+			background-image: url(../img/icon-sport/MLVideo.svg);
+		}
+	}
+}

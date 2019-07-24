@@ -1,0 +1,13 @@
+.searchMenu{
+	&__field{
+		border: 1px solid #d4d4d4;
+		text-transform: uppercase;
+	}
+	&__button{
+		&:after{
+			content: '\f002';
+			font-family: FontAwesome;
+			font-size: 18px;
+		}
+	}
+}

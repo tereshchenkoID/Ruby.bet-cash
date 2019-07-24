@@ -1,0 +1,106 @@
+.flex{
+	&-container{
+		display: flex
+	}
+	&-dir-row{
+		flex-wrap: wrap
+	}
+	&-dir-row-reverse{
+		flex-direction: row-reverse
+	}
+	&-dir-column{
+		flex-direction: column
+	}
+	&-dir-column-reverse{
+		flex-direction: column-reverse
+	}
+	&-wrap{
+		flex-wrap: wrap;
+	}
+}
+.align{
+	&-left{
+		justify-content: flex-start
+	}
+	&-right{
+		justify-content: flex-end
+	}
+	&-center{
+		justify-content: center
+	}
+	&-justify{
+		justify-content: space-between
+	}
+	&-spaced{
+		justify-content: space-around
+	}
+	&-top{
+		align-items: flex-start
+	}
+	&-bottom{
+		align-items: flex-end
+	}
+	&-middle{
+		align-items: center
+	}
+	&-stretch{
+		align-items: stretch
+	}
+	&-baseline{
+		align-items: baseline
+	}
+	&-self-top{
+		align-self: flex-start
+	}
+	&-self-bottom{
+		align-self: flex-end
+	}
+	&-self-middle{
+		align-self: center
+	}
+	&-self-stretch{
+		align-self: stretch
+	}
+	&-center-middle{
+		justify-content: center;
+		align-items: center
+	}
+}
+.text{
+	&-left{
+		text-align: left
+	}
+	&-right{
+		text-align: right
+	}
+	&-center{
+		text-align: center
+	}
+	&-justify{
+		text-align: justify
+	}
+	&-uppercase{
+		text-transform: uppercase
+	}
+	&-underline{
+		text-decoration: underline
+	}
+	&-cursive{
+		font-style: italic
+	}
+	&-nowrap{
+		white-space: nowrap
+	}
+}
+.overflow{
+	&-hidden{
+		overflow: hidden!important
+	}
+	&-visible{
+		overflow: visible!important
+	}
+}
+
+.relative{
+	position: relative;
+}

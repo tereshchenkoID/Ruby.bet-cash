@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Index</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>load.loadParts('header');</script>
+    <style>.loader{position: fixed;left: 0;top: 0;bottom: 0;right: 0;z-index: 10;background-color: rgba(74,4,19,1);display: flex;align-items: center;justify-content: center;}.loader *{font-size: 90px;color: #fff;}</style>
+  </head>
+  <body>
+    <div class="loader"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+    <div class="header" style="margin-bottom: 10px;">
+      <div class="container-fluid" id="header-forMenuTop"></div>
+      <div class="nav container-fluid">
+        <div class="container flex-container align-middle">
+          <div class="content left" id="header-forLogo"></div>
+          <div class="overflow-visible content center" id="header-forMenuMain"></div>
+          <div class="content right" id="header-forMenuSearch"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main"></div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+.classification{
+	&__category{
+		background-color: darken(#fff, 2%);
+		height: $base-height;
+		padding: 0 25px 0 10px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		position: relative;
+		margin-bottom: 1px;
+		&:before{
+			content: "";
+			position: absolute;
+			font-family: FontAwesome;
+			color: #000;
+			font-size: 20px;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&:hover{
+			background-color: #fff;
+		}
+		&.closed{
+			&:hover{
+				&:before{
+					content: "\f107";
+				}
+			}
+		}
+		&.open{
+			&:hover{
+				&:before{
+					content: "\f106";
+				}
+			}
+		}
+
+		.icon{
+			order: 1;
+			color: #000;
+			font-size: 20px;
+			margin-right: 10px;
+		}
+		.font{
+			order: 2;
+			color: #000;
+			text-transform: uppercase;
+		}
+	}
+	&__subcategory{
+		background-color: darken($second, 5%);
+		height: $base-height;
+		padding: 0 10px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		position: relative;
+		margin-bottom: 1px;
+		&:before{
+			content: "";
+			position: absolute;
+			font-family: FontAwesome;
+			font-size: 20px;
+			color: #fff;
+			right: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&:hover{
+			background-color: lighten(#281420, 5%);
+		}
+		
+		&.closed{
+			&:hover{
+				&:before{
+					content: "\f107";
+				}
+			}
+		}
+		&.open{
+			&:hover{
+				&:before{
+					content: "\f106";
+				}
+			}
+		}
+
+		.icon{
+			height: auto;
+			max-width: 23px;
+			margin-right: 5px;
+		}
+		.font{
+			color: #fff;
+		}
+	}
+
+	&__link{
+		background-color: lighten($second, 5%);
+		padding: 10px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		margin-bottom: 1px;
+		.block{
+			&:first-child{
+				width: 65%;
+			}
+			&:last-child{
+				width: 35%;
+			}
+		}
+		.table{
+			width: auto;
+			*{
+				text-align: right;
+			}
+			td{
+				padding: 2px 3px;
+				&:last-child{
+					*{
+						color: rgba(255,255,255,0.5);
+					}
+				}
+			}
+		}
+		.circle{
+			background-color: $primary;
+			height: 5px;
+			width: 5px;
+			border-radius: 100%;
+		}
+	}
+}

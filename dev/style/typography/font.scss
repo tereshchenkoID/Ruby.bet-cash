@@ -1,0 +1,44 @@
+$font-color: (
+	'primary': $primary,
+	'l-white': $l-white,
+	'm-white': $m-white,
+	'd-white': $d-white,
+	'white': $white,
+	'black': #000,
+	'red': red,
+	'green': green
+);
+
+$font-size: (
+	'xs': 10px,
+	'sm': 12px,
+	'md': 16px,
+	'lg': 22px,
+	'title': 26px
+);
+$font-weight: (
+	'normal': 400,
+	'bold': 700
+);
+.font{
+	color: $base-font-color;
+	line-height: $base-font-line-height;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	@each $status, $text-color in $font-color{
+		&.#{$status}{
+			color: $text-color;
+		}
+	}
+	@each $status, $text-weight in $font-weight{
+		&.#{$status}{
+			font-weight: $text-weight;
+		}
+	}
+	@each $status, $text-size in $font-size{
+		&.#{$status}{
+			font-size: $text-size;
+		}
+	}
+}

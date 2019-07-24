@@ -1,0 +1,120 @@
+@mixin font{
+	font-style: normal;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	color: $base-font-color;
+	line-height: $base-font-line-height;
+	text-transform: none;
+}
+@mixin input{
+	overflow: hidden;
+	width: 100%;
+	padding: 5px 10px;
+	height: $base-height;
+}
+
+@mixin scroll($width, $track-color, $track-border, $thumb-color, $thumb-border){
+	&::-webkit-scrollbar{
+		width: $width;
+	}
+	&::-webkit-scrollbar-thumb{
+		border: 1px solid $thumb-border;
+		background-clip: content-box;
+		background-color: $thumb-color;
+	}
+	&::-webkit-scrollbar-track{
+		border: $track-border;
+		background-color: $track-color;
+	}
+}
+
+@mixin placeholder($color){
+	&::-webkit-input-placeholder{
+		color: $color;
+	}
+	&::-moz-placeholder{
+		color: $color;
+	}
+	&:-ms-input-placeholder{
+		color: $color;
+	}
+}
+
+@mixin absolute{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+
+@mixin absolute-center{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin absolute-center-left($left){
+	position: absolute;
+	left: $left;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin absolute-center-right($right){
+	position: absolute;
+	right: $right;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin absolute-center-top($top){
+	position: absolute;
+	right: 50%;
+	top: $top;
+	transform: translateX(-50%);
+}
+
+@mixin absolute-center-bottom($bottom){
+	position: absolute;
+	right: 50%;
+	bottom: $bottom;
+	transform: translateX(-50%);
+}
+
+@mixin shadow($color){
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		z-index: 1;
+		background-color: $color;
+	}
+}
+
+@mixin ellipsis{
+	max-width: 100%;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: left;
+	text-overflow: ellipsis;
+}
+
+@mixin media-max($maxwidth){
+	@media only screen and (max-width: $maxwidth+ "px"){
+		@content
+	}
+}
+
+@mixin media-min($minwidth){
+	@media only screen and (min-width: $minwidth+ "px"){
+		@content
+	}
+}
