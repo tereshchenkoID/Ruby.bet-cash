@@ -16,9 +16,12 @@
 @import './dev/style/typography/title';
 
 @import './dev/style/components/button';
-@import './dev/style/components/field';
+@import './dev/style/components/checkbox';
 @import './dev/style/components/close';
-
+@import './dev/style/components/field';
+@import './dev/style/components/select';
+@import './dev/style/components/tab';
+@import './dev/style/components/table';
 
 
 @import './dev/style/parts/live';
@@ -41,4 +44,6 @@
 
 /* Pages */
 @import './dev/modules/pages/live/live';
+@import './dev/modules/pages/prematch/prematch';
+@import './dev/modules/pages/printPrematch/printPrematch';
 /* End Pages */

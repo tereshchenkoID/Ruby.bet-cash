@@ -51,7 +51,7 @@
 	&__subcategory{
 		background-color: darken($second, 5%);
 		height: $base-height;
-		padding: 0 10px;
+		padding: 0 30px 0 10px;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
@@ -115,6 +115,7 @@
 		}
 		.table{
 			width: auto;
+			background-color: rgba(0,0,0,0);
 			*{
 				text-align: right;
 			}
@@ -128,7 +129,7 @@
 			}
 		}
 		.circle{
-			background-color: $primary;
+			background-color: yellow;
 			height: 5px;
 			width: 5px;
 			border-radius: 100%;

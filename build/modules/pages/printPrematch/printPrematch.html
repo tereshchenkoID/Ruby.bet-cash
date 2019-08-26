@@ -1,0 +1,85 @@
+
+<div class="container flex-container printPrematch-content" style="margin-bottom: 10px">
+  <div class="content center">
+    <div class="tab">
+      <div class="tab__header tab__header--border flex-container align-middle"><a class="font tab__link tab__link--active">ПЕЧАТЬ ПРЕМАТЧ</a><a class="font tab__link">ПЕЧАТЬ ВЫБРАНЫХ СОБЫТИЙ</a><a class="font tab__link">ПЕЧАТЬ РЕЗУЛЬТАТОВ</a></div>
+      <div class="tab__body tab__body--active">
+        <div class="printPrematch__body">
+          <div class="flex-container align-middle time">
+            <p class="font white text-uppercase text-nowrap mr">Диапазон времени</p>
+            <select class="select">
+              <option value="1">24.09.2018</option>
+              <option value="2">24.09.2018</option>
+              <option value="3">24.09.2018</option>
+              <option value="4">24.09.2018</option>
+            </select>
+          </div>
+          <div class="flex-container">
+            <div class="wrapper wrapper--active" id="wrapper-sport">
+              <div class="flex-container align-middle title">
+                <p class="font">Спорт</p>
+              </div>
+              <div class="block scroll">
+                <label class="label" for="sport">
+                  <input class="checkbox" type="checkbox" id="sport"/>
+                  <p class="font">Все</p>
+                </label>
+                <div class="block__wrapper"></div>
+              </div>
+            </div>
+            <div class="wrapper wrapper--active" id="wrapper-country">
+              <div class="flex-container align-middle title">
+                <p class="font">СТРАНЫ</p>
+              </div>
+              <div class="block scroll">
+                <label class="label" for="country">
+                  <input class="checkbox" type="checkbox" id="country"/>
+                  <p class="font">Все</p>
+                </label>
+                <div class="block__wrapper"></div>
+              </div>
+            </div>
+            <div class="wrapper wrapper--active" id="wrapper-tournament">
+              <div class="flex-container align-middle title">
+                <p class="font">ТУРНИРЫ</p>
+              </div>
+              <div class="block scroll">
+                <label class="label" for="tournament">
+                  <input class="checkbox" type="checkbox" id="tournament"/>
+                  <p class="font">Все</p>
+                </label>
+                <div class="block__wrapper"></div>
+              </div>
+            </div>
+          </div>
+          <div class="table">
+            <div class="row">
+              <div class="cell">
+                <p class="font">Спорт</p>
+              </div>
+              <div class="cell">
+                <p class="font">Страны</p>
+              </div>
+              <div class="cell">
+                <p class="font">Турниры</p>
+              </div>
+              <div class="cell padding">
+                <label class="flex-container align-middle">
+                  <input class="checkbox checkbox--white" type="checkbox"/><span class="font ml">Все</span>
+                </label>
+              </div>
+              <div class="cell"></div>
+            </div>
+            <div class="table__wrap"></div>
+          </div>
+        </div>
+        <div class="printPrematch__footer">
+          <div class="flex-container align-middle">
+            <button class="button primary disabled mr">Печать</button>
+            <button class="button primary ml">Очистить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

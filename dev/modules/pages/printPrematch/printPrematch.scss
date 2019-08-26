@@ -1,0 +1,148 @@
+.printPrematch{
+	&__body{
+		padding: 10px;
+		background-color: #281420;
+		.time{
+			margin-bottom: 10px;
+		}
+
+		.select{
+			color: #fff;
+			width: 120px;
+			border: 1px solid #4e2d41;
+			background-color: #20101a;
+			background-image: url('../img/service/select-arrow.png');
+		}
+
+		.block{
+			//height: 300px;
+			overflow-y: auto;
+			overflow-x: hidden;
+			background-color: #fff;
+			&__wrapper{
+				& > div{
+					border: 2px solid red;
+					//border-bottom: 1px solid #20101a;
+				}
+			}
+		}
+		
+		.wrapper{
+			display: none;
+			border: 1px solid transparent;
+			width: 33.3333%;
+			&--active{
+				display: block
+			}
+			&--not-active{
+				display: none
+			}
+		}
+
+		.title{
+			background-color: $second;
+			height: $base-height;
+			padding: 10px;
+			*{
+				color: #fff;
+				text-transform: uppercase;
+			}
+		}
+
+		.label{
+			height: $base-height;
+			display: flex;
+			align-items: center;
+			padding: 5px 10px;
+			background-color: darken(#fff, 5%);
+			position: relative;
+			cursor: pointer;
+			border-bottom: 1px solid #20101a;
+			&:hover{
+				background-color: #fff
+			}
+			*{
+				color: #000;
+				text-transform: uppercase;
+				&:nth-child(2){
+					margin-left: 5px;
+					font-size: 20px;
+				}
+				&:nth-child(3){
+					margin-left: 5px;
+					font-size: 18px;
+				}
+			}
+			img{
+				height: auto;
+				max-width: 23px;
+				margin-right: 5px;
+			}
+		}
+
+		.table{
+			margin-top: 10px;
+			&--small{
+				.cell{
+					&:nth-child(1),
+					&:nth-child(2),
+					&:nth-child(3){
+						margin-right: 1px;
+						background-color: #fff;
+						padding: 5px 10px;
+						width: calc(100% / 3 - 12px);
+					}
+					&:nth-child(4){
+						padding: 0;
+						width: 36px;
+					}
+				}
+			}
+			& > .row{
+				&:first-child{
+					.cell{
+						background-color: $second;
+						text-transform: uppercase;
+						*{
+							color: #fff;
+						}
+					}
+				}
+			}
+			.cell{
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3),
+				&:nth-child(4){
+					padding: 5px 10px;
+					background-color: #fff;
+					width: calc(100% / 4 - 10px);
+				}
+				&:nth-child(4){
+					display: inline-block;
+					label{
+						height: 100%;
+						padding: 5px 10px;
+					}
+				}
+				&:nth-child(5){
+					width: 36px;
+				}
+			}
+		}
+	}
+
+	&__footer{
+		background-color: lighten(#281420, 5%);
+		padding: 10px;
+		.button{
+			width: 100px;
+			&.disabled{
+				background-color: darken($primary, 20%);
+			}
+		}
+	}
+}

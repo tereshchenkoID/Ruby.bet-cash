@@ -1,0 +1,49 @@
+.tab{
+	&__header{
+		position: relative;
+		height: $base-height;
+		&--border{
+			&:after{
+				content: "";
+				position: absolute;
+				height: 2px;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-color: $primary;
+			}
+		}
+	}
+	&__link{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		height: 100%;
+		white-space: nowrap;
+		margin-right: 1px;
+		color: rgba(255, 255, 255, 0.5);
+		background-color: darken($primary, 20%);
+		text-transform: uppercase;
+		&:last-child{
+			margin-right: 0;
+		}
+		&:hover{
+			background-color: darken($primary, 10%);
+			color: #fff;
+		}
+		&--active{
+			background-color: $primary;
+			color: #fff;
+		}
+	}
+	&__body{
+		display: none;
+		&--active{
+			display: block;
+		}
+		&--not-active{
+			display: none;
+		}
+	}
+}

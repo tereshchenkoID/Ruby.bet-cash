@@ -1,0 +1,66 @@
+.container.flex-container.printPrematch-content(style="margin-bottom: 10px")
+	.content.center
+		.tab
+			.tab__header.tab__header--border.flex-container.align-middle
+				a.font.tab__link.tab__link--active ПЕЧАТЬ ПРЕМАТЧ
+				a.font.tab__link ПЕЧАТЬ ВЫБРАНЫХ СОБЫТИЙ
+				a.font.tab__link ПЕЧАТЬ РЕЗУЛЬТАТОВ
+			.tab__body.tab__body--active
+				.printPrematch__body
+					.flex-container.align-middle.time
+						p.font.white.text-uppercase.text-nowrap.mr Диапазон времени
+						select.select
+							option(value='1') 24.09.2018
+							option(value='2') 24.09.2018
+							option(value='3') 24.09.2018
+							option(value='4') 24.09.2018
+					.flex-container
+						.wrapper.wrapper--active#wrapper-sport
+							.flex-container.align-middle.title
+								p.font Спорт
+							.block.scroll
+								label(for="sport").label
+									input(type="checkbox").checkbox#sport
+									p.font Все
+								.block__wrapper
+
+
+						.wrapper.wrapper--active#wrapper-country
+							.flex-container.align-middle.title
+								p.font СТРАНЫ
+							.block.scroll
+								label(for="country").label
+									input(type="checkbox").checkbox#country
+									p.font Все
+								.block__wrapper
+
+
+						.wrapper.wrapper--active#wrapper-tournament
+							.flex-container.align-middle.title
+								p.font ТУРНИРЫ
+							.block.scroll
+								label(for="tournament").label
+									input(type="checkbox").checkbox#tournament
+									p.font Все
+								.block__wrapper
+
+									
+					.table
+						.row
+							.cell
+								p.font Спорт
+							.cell
+								p.font Страны
+							.cell
+								p.font Турниры
+							.cell.padding
+								label.flex-container.align-middle
+									input.checkbox.checkbox--white(type='checkbox')
+									span.font.ml Все
+							.cell
+						.table__wrap
+
+				.printPrematch__footer
+					.flex-container.align-middle
+						button.button.primary.disabled.mr Печать
+						button.button.primary.ml Очистить

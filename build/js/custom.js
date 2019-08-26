@@ -27,7 +27,15 @@ var Load = function(){
 					"css": false,
 					"lang": false
 				}
-			}
+			},
+			"prematch":{
+				"search": { 
+					"wrap": "#prematch-forMainSearch",
+					"css": false,
+					"lang": false
+				}
+			},
+			"printPrematch":{}
 		}
 	};
 }
@@ -184,6 +192,85 @@ Base.prototype.getCookie = function(name) {
 }
 
 
+Base.prototype.checkTime = function(data){
+	var timer = '',
+		half  = '',
+		self = this;
+	if (data.DC == 1) {
+		if (data.TT == 1 || data.TM > 0){
+			timer = self.timer(data.TU, data.TM, data.TS);
+		}
+		else
+			timer = '00:00';
+
+		if (data.TM >= 45)
+		  half = '2nd Half';
+		else
+		  half = '1st Half';
+
+		if (data.TM == 45 && data.TT == 0) {
+		  half = 'Half Time';
+		  timer = '45:00'
+		}
+
+		if (data.TT == 0 && data.TU == '') {
+			half = '1st Half';
+			timer = self.timerTT(data.TU, data.TM, data.TS);
+		}
+	}
+	return {half: half, timer: timer, data: data};
+}
+
+Base.prototype.timer = function(etu, etm, ets) {
+	etu = etu.toString();
+	etm = etm.toString();
+	ets = ets.toString();
+	years = etu.substring(0,4); 
+	month = etu.substring(4,6); 
+	day = etu.substring(6,8);
+	hours = etu.substring (8,10);
+	minute = etu.substring(10,12);
+	second = etu.substring(12,14);
+	date = years+'-'+month+'-'+day+' '+hours+':'+minute+':'+second;
+	var ts = new Date(date).getTime()/1000;
+	var tn = new Date().getTime()/1000;
+	dt = Math.floor(tn - ts + etm*60 + ets - 120*60);
+	min = Math.floor(dt / 60);
+	sec = dt - min * 60;
+	if (min<10) min = '0'+min; 
+	if (sec<10) sec = '0'+sec; 
+	timer = min+':'+sec;
+	return timer;
+}
+
+Base.prototype.timerTT = function(etm, ets) {
+	if (etm<10) etm = '0'+etm; 
+	if (ets<10) ets = '0'+ets; 
+	timer = etm+':'+ets;
+	return timer;
+}
+
+Base.prototype.startTimer = function(){
+	var self = this;
+	$('[data-tt=0]').each(function(i, elem){
+		var tm = $(this).data("tm");
+		var ts = $(this).data("ts");
+		var timer = self.timerTT(tm, ts);
+		$(this).find('.team-time').text(timer);
+	});
+
+	setInterval(function(){
+		$('[data-tt=1]').each(function(i, elem){
+			var tu = $(this).data("tu");
+			var tm = $(this).data("tm");
+			var ts = $(this).data("ts");
+			var timer = self.timer(tu, tm, ts);
+			$(this).find('.team-time').text(timer);
+		});
+	}, 500);
+};
+
+
 Base.prototype.checkValue = function(obj, value){
 	return obj.hasOwnProperty(value)
 }
@@ -196,11 +283,9 @@ Base.prototype.g_TU = function(etu) {
 	hours = etu.substring (8,10);
 	minute = etu.substring(10,12);
 	second = etu.substring(12,14);
-	date = years+'-'+month+'-'+day+' '+hours+':'+minute+':'+second;
+	date = years+'-'+month+'-'+day+' '+hours+':'+minute;
 	return date;
 }
-
-
 
 Base.prototype.httpGet = function(url){
 	return new Promise(function(resolve, reject) {

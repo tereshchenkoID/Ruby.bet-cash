@@ -1,0 +1,47 @@
+$checkbox-size: 15px;
+.checkbox{
+	cursor: pointer;
+	min-height: $checkbox-size;
+	min-width: $checkbox-size;
+	height: $checkbox-size;
+	width: $checkbox-size;
+	position: relative;
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		width: $checkbox-size;
+		height: $checkbox-size;
+		border: 1px solid #000;
+		background: transparent;
+	}
+	&:after{
+		content: "\2713";
+		position: absolute;
+		color: #000;
+		font-weight: bold;
+		font-size: 14px;
+		opacity: 0;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&:checked{
+		&:after{
+			opacity: 1;
+		}
+	}
+	&:focus,
+	&:hover{
+		border: 0;
+		outline: 0;
+	}
+	&--white{
+		&:before{
+			border: 1px solid #fff;
+		}
+		&:after{
+			color: #fff;
+		}
+	}
+}
